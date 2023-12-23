@@ -1,15 +1,14 @@
 import os
 import sys
-sys.path.append('.')
-os.system("pip install gradio==3.50.2")
-
+#sys.path.append('.')
+#os.system("pip install gradio==3.50.2")
 import cv2
 import einops
 import numpy as np
 import torch
 import random
 import gradio as gr
-print(gr.__version__)
+#print(gr.__version__)
 
 import albumentations as A
 from PIL import Image
