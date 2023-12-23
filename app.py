@@ -7,6 +7,7 @@ import numpy as np
 import torch
 import random
 import gradio as gr
+print(gr.__version__)
 import os
 import albumentations as A
 from PIL import Image
