@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append('.')
+#sys.path.append('.')
 import cv2
 import einops
 import numpy as np
@@ -19,7 +19,7 @@ from huggingface_hub import snapshot_download
 
 
 snapshot_download(repo_id="xichenhku/AnyDoor_models", local_dir="./AnyDoor_models")
-
+snapshot_download(repo_id="xichenhku/mask_refine", local_dir="./mask_refine")
 
 cv2.setNumThreads(0)
 cv2.ocl.setUseOpenCL(False)
@@ -43,7 +43,7 @@ ddim_sampler = DDIMSampler(model)
 
 if use_interactive_seg:
     from iseg.coarse_mask_refine_util import BaselineModel
-    model_path = './iseg/coarse_mask_refine.pth'
+    model_path = './mask_refine/coarse_mask_refine.pth'
     iseg_model = BaselineModel().eval()
     weights = torch.load(model_path , map_location='cpu')['state_dict']
     iseg_model.load_state_dict(weights, strict= True)
