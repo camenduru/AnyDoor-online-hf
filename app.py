@@ -279,7 +279,7 @@ with gr.Blocks() as demo:
                 num_samples = 1
                 strength = gr.Slider(label="Control Strength", minimum=0.0, maximum=2.0, value=1.0, step=0.01)
                 ddim_steps = gr.Slider(label="Steps", minimum=1, maximum=100, value=30, step=1)
-                scale = gr.Slider(label="Guidance Scale", minimum=0.1, maximum=30.0, value=5.0, step=0.1)
+                scale = gr.Slider(label="Guidance Scale", minimum=0.1, maximum=30.0, value=4.5, step=0.1)
                 seed = gr.Slider(label="Seed", minimum=-1, maximum=999999999, step=1, value=-1)
                 gr.Markdown(" Higher guidance-scale makes higher fidelity, while lower guidance-scale leads to more harmonized blending.")
     
