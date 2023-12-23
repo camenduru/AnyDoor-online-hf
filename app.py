@@ -308,4 +308,4 @@ with gr.Blocks() as demo:
                                    ], 
                            outputs=[baseline_gallery]
                         )
-demo.launch(share=True, show_api=False)
+demo.launch()
