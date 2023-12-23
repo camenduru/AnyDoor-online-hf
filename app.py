@@ -1,5 +1,6 @@
 import os
 import sys
+sys.path.append('.')
 import cv2
 import einops
 import numpy as np
