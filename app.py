@@ -1,5 +1,7 @@
+import os
 import sys
 sys.path.append('.')
+os.system("pip install gradio==3.50.2")
 
 import cv2
 import einops
@@ -8,7 +10,7 @@ import torch
 import random
 import gradio as gr
 print(gr.__version__)
-import os
+
 import albumentations as A
 from PIL import Image
 import torchvision.transforms as T
