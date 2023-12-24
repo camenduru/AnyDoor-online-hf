@@ -267,10 +267,14 @@ with gr.Blocks() as demo:
                 scale = gr.Slider(label="Guidance Scale", minimum=0.1, maximum=30.0, value=4.5, step=0.1)
                 seed = gr.Slider(label="Seed", minimum=-1, maximum=999999999, step=1, value=-1)
                 enable_shape_control = gr.Checkbox(label='Enable Shape Control', value=False)
-                gr.Markdown(" Higher guidance-scale makes higher fidelity, while lower guidance-scale leads to more harmonized blending.")
+                gr.Markdown("### Guidelines")
+                gr.Markdown(" Higher guidance-scale makes higher fidelity, while lower one makes more harmonized blending.")
+                gr.Markdown(" Enable shape control means the generation results would consider user-drawn masks; otherwise it \
+                              considers the location and size to adjust automatically.")
+                gr.Markdown(" Users should annotate the mask of the target object, too coarse mask would lead to bad generation.")
     
         gr.Markdown("# Upload / Select Images for the Background (left) and Reference Object (right)")
-        gr.Markdown("### Your could draw coarse masks on the background to indicate the desired location and shape.")
+        gr.Markdown("### You could draw coarse masks on the background to indicate the desired location and shape.")
         gr.Markdown("### <u>Do not forget</u> to annotate the target object on the reference image.")
         with gr.Row():
             base = gr.Image(label="Background", source="upload", tool="sketch", type="pil", height=512, brush_color='#FFFFFF', mask_opacity=0.5)
